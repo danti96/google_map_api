@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title Page</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="panel-izquierdo">
+        <h3>My Google Maps Demo</h3>
+        <div class="form-search-maps">
+          <div class="container-flex">
+            <input
+              type="search"
+              name="field-search"
+              id="field-search"
+              placeholder="Search"
+              class="input"
+              onblur="codeAddress()"
+            />
+
+            <button
+              type="button"
+              id="button"
+              class="btn-location"
+            >
+              <i class="fa-solid fa-location-crosshairs"></i> Get Current
+              Location
+            </button>
+          </div>
+
+          <!-- Result -->
+
+          <div style="display: none">
+            <div id="info-content">
+              <table>
+                <tr id="iw-url-row" class="iw_table_row">
+                  <td id="iw-icon" class="iw_table_icon"></td>
+                  <td id="iw-url"></td>
+                </tr>
+                <tr id="iw-address-row" class="iw_table_row">
+                  <td class="iw_attribute_name">Address:</td>
+                  <td id="iw-address"></td>
+                </tr>
+                <tr id="iw-phone-row" class="iw_table_row">
+                  <td class="iw_attribute_name">Telephone:</td>
+                  <td id="iw-phone"></td>
+                </tr>
+                <tr id="iw-rating-row" class="iw_table_row">
+                  <td class="iw_attribute_name">Rating:</td>
+                  <td id="iw-rating"></td>
+                </tr>
+                <tr id="iw-website-row" class="iw_table_row">
+                  <td class="iw_attribute_name">Website:</td>
+                  <td id="iw-website"></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <hr style="width:100%;margin-top: 2rem;">
+        <small id="found-number" style="display: none;"></small>
+        <!-- Cards con ubicaciones -->
+        <div class="scroll" id ="card-result">
+        </div>
+        <div style="width: 100%;text-align: center;">
+          <button type="button" id="view-more" class="btn-view-more" style="display: none;">
+            <span style="font-size: 2rem;position: absolute;left: 4px;bottom: -2px;color: #fff;">
+            <i class="fa-solid fa-circle-arrow-down"></i>
+            </span>
+            View more
+          </button>
+          </div>
+      </div>
+
+      <div class="form-google-maps">
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=<APIKEY>&callback=initMap&region=US&libraries=places,geometry&v=weekly"
+      defer
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
+
